@@ -13,8 +13,10 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <NavBar />
-      <Countries />
+      <div style={{ position: "fixed", top: "0", zIndex: "1", width: "100%" }}>      <NavBar />
+      </div>
+      <div style={{ position: "relative", top: "100px" }}>      <Countries />
+      </div>
     </div>
   );
 };

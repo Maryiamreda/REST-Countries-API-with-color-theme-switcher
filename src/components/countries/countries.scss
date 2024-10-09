@@ -1,0 +1,44 @@
+.search-row {
+    padding: 20px;
+
+    select {}
+
+    .searchbar {
+        border: none;
+        padding: 0.5rem;
+        border-radius: 4px;
+        width: 24vw;
+
+        &::placeholder {
+            font-size: 0.7rem;
+        }
+    }
+
+
+}
+
+.seatch-icon {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 columns per row
+    gap: 1.5rem; // Same as Tailwind 'gap-6'
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr); // 3 columns on medium screens
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr); // 2 columns on small screens
+    }
+
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr; // 1 column on extra small screens
+    }
+}
