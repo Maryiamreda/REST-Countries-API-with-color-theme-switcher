@@ -38,10 +38,8 @@ const Details = () => {
             <Link to={"/"}>
                 <div style={{ backgroundColor: elementColor }}
                     className="btn inline-flex gap-2 p-10 ">
-
                     <FaArrowLeftLong />
                     <span>Back</span>
-
                 </div>
             </Link>
             <div className=" country-details ">
@@ -50,8 +48,7 @@ const Details = () => {
                     <h1 style={{ fontWeight: "800", paddingBottom: "2rem" }} className="">{country.name}</h1>
                     <div className="country-info" style={{ fontSize: "15px" }}>
                         <div style={{ display: "flex", flexDirection: "column" }} >
-                            <div style={{ display: "inline-flex" }} ><strong>Native Name:</strong><p style={{ opacity: "0.7" }} >{country.nativeName}</p> </div>
-
+                            <div style={{ display: "inline-flex", gap: "5px" }} ><strong>Native Name:</strong><p style={{ opacity: "0.7" }} >{country.nativeName}</p> </div>
                             <div style={{ display: "inline-flex", gap: "5px" }}><strong>Population:</strong> <p style={{ opacity: "0.7" }} >{country.population.toLocaleString()}</p> </div>
                             <div style={{ display: "inline-flex", gap: "5px" }}><strong>Region:</strong> <p style={{ opacity: "0.7" }} >{country.region}</p> </div>
                             <div style={{ display: "inline-flex", gap: "5px" }}><strong>Sub Region:</strong> <p style={{ opacity: "0.7" }} >{country.subregion}</p> </div>

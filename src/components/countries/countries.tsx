@@ -68,7 +68,7 @@ const Countries = () => {
                     />
                     {/* <Search className="absolute left-3 top-2.5 text-gray-400" size={20} /> */}
                 </div>
-                <select className=" region-select px-4 py-2 rounded-md" style={{ backgroundColor: elementColor }} onChange={(e) => setSelectedRegion(e.target.value)}>
+                <div className=" select"><select className=" region-select px-4 py-2 rounded-md" style={{ backgroundColor: elementColor }} onChange={(e) => setSelectedRegion(e.target.value)}>
                     <option value="" disabled>Filter by Region</option>
 
                     <option>Africa</option>
@@ -76,21 +76,24 @@ const Countries = () => {
                     <option>Asia</option>
                     <option>Europe</option>
                     <option>Oceania</option>
-                </select>
+                </select></div>
+
             </div>
             <div className="countries-grid">
                 {filteredcountries ? (
                     filteredcountries.map((country, index) => (
                         <Link to={`/country/details/${country.name}`}>
                             <div key={index} className="country p-4 bg-white shadow rounded-md">
-
                                 <img src={country.flags.png} alt={`${country.name} flag`} className="w-full h-auto" />
-                                <h2 className="text-lg font-bold mt-2">{country.name}</h2>
-                                <p>Population: {country.population}</p>
-                                <p>Region: {country.region}</p>
-                                <p>Capital: {country.capital}</p>
+                                <div className='card-info' style={{ background: elementColor }}> <h3 className="text-base  mt-2">{country.name}</h3>
+                                    <p>Population: <span>{country.population}</span> </p>
+                                    <p>Region: <span> {country.region}</span></p>
+                                    <p>Capital: <span>{country.capital}</span> </p>
+                                </div>
 
-                            </div></Link>
+
+                            </div>
+                        </Link>
 
                     ))
                 ) : (

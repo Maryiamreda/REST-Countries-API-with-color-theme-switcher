@@ -1,13 +1,28 @@
 .search-row {
-    padding: 20px;
+    padding: 0px 30px 30px 30px;
 
-    select {}
+
+    @media (max-width: 640px) {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        .select {
+            width: 315px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+        }
+    }
 
     .searchbar {
         border: none;
         padding: 0.7rem;
         border-radius: 4px;
-        width: 23vw;
+        width: 315px;
 
         &::placeholder {
             font-size: 0.7rem;
@@ -17,6 +32,8 @@
         &:focus {
             outline: none;
         }
+
+
     }
 
 
@@ -34,6 +51,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr); // 4 columns per row
     gap: 1.5rem;
+    padding: 0px 30px 30px 30px;
 
     @media (max-width: 1024px) {
         grid-template-columns: repeat(3, 1fr); // 3 columns on medium screens
@@ -44,7 +62,42 @@
     }
 
     @media (max-width: 640px) {
-        grid-template-columns: 1fr; // 1 column on extra small screens
+        // padding: 0px 30px 30px 100px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.country {
+    width: 220px;
+    border-radius: 5px;
+
+    h3 {
+        padding-bottom: 8px;
+    }
+
+    p {
+        padding-bottom: 3px;
+    }
+
+    img {
+        width: inherit;
+        border-radius: 4.5px 4.5px 0 0;
+
+    }
+
+    .card-info {
+        font-size: 10px;
+        padding: 15px 15px 30px 15px;
+        border-radius: 0 0 4.5px 4.5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        span {
+            opacity: 0.5;
+        }
     }
 }
 
