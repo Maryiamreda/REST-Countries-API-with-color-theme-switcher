@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { ThemeContext } from './ThemeProvider';
 import NavBar from './components/navBar';
 import Countries from './components/countries/countries';
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from './components/countryDetails/details';
 

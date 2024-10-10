@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { ThemeContext } from "../../ThemeProvider";
@@ -21,7 +21,7 @@ const Details = () => {
     const { name } = useParams<{ name: string }>();
     const [country, setCountry] = useState<Country | null>(null);
     const themeContext = useContext(ThemeContext);
-    const { theme, elementColor } = themeContext;
+    const { elementColor } = themeContext;
     useEffect(() => {
         fetch('/data.json')
             .then((response) => response.json())

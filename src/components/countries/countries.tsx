@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import './countries.scss';
 import { FaSearch } from 'react-icons/fa';
 
-import { ThemeContext, ThemeProvider } from '../../ThemeProvider';
+import { ThemeContext } from '../../ThemeProvider';
 import { Link } from 'react-router-dom';
 // Define the country type
 type Country = {
@@ -21,7 +21,7 @@ const Countries = () => {
     const [searchValue, setSearchValue] = useState(''); // Search input state
     const [selectedRegion, setSelectedRegion] = useState(''); // Region filter state
     const themeContext = useContext(ThemeContext);
-    const { theme, elementColor } = themeContext;
+    const { elementColor } = themeContext;
     useEffect(() => {
         fetch('/data.json') // Ensure correct path if using public folder
             .then((response) => response.json())
