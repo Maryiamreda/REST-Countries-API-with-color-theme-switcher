@@ -3,6 +3,7 @@ import './countries.scss';
 import { FaSearch } from 'react-icons/fa';
 
 import { ThemeContext, ThemeProvider } from '../../ThemeProvider';
+import { Link } from 'react-router-dom';
 // Define the country type
 type Country = {
     name: string,
@@ -67,7 +68,7 @@ const Countries = () => {
                     />
                     {/* <Search className="absolute left-3 top-2.5 text-gray-400" size={20} /> */}
                 </div>
-                <select className=" px-4 py-2 rounded-md" style={{ backgroundColor: elementColor }} onChange={(e) => setSelectedRegion(e.target.value)}>
+                <select className=" region-select px-4 py-2 rounded-md" style={{ backgroundColor: elementColor }} onChange={(e) => setSelectedRegion(e.target.value)}>
                     <option value="" disabled>Filter by Region</option>
 
                     <option>Africa</option>
@@ -80,13 +81,17 @@ const Countries = () => {
             <div className="countries-grid">
                 {filteredcountries ? (
                     filteredcountries.map((country, index) => (
-                        <div key={index} className="country p-4 bg-white shadow rounded-md">
-                            <img src={country.flags.png} alt={`${country.name} flag`} className="w-full h-auto" />
-                            <h2 className="text-lg font-bold mt-2">{country.name}</h2>
-                            <p>Population: {country.population}</p>
-                            <p>Region: {country.region}</p>
-                            <p>Capital: {country.capital}</p>
-                        </div>
+                        <Link to={`/country/details/${country.name}`}>
+                            <div key={index} className="country p-4 bg-white shadow rounded-md">
+
+                                <img src={country.flags.png} alt={`${country.name} flag`} className="w-full h-auto" />
+                                <h2 className="text-lg font-bold mt-2">{country.name}</h2>
+                                <p>Population: {country.population}</p>
+                                <p>Region: {country.region}</p>
+                                <p>Capital: {country.capital}</p>
+
+                            </div></Link>
+
                     ))
                 ) : (
                     <div>Loading...</div>
